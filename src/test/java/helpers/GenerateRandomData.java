@@ -9,24 +9,40 @@ import java.util.List;
  * Класс с генерацией рандомных значений
  */
 public class GenerateRandomData {
-    private static  final Faker faker = new Faker(); //Экземпляр класса Faker
-    public static String generateRandomName(){ // Генерация значения для Title
-       return faker.name().name();
+    private static final Faker faker = new Faker();
+    /**
+     * Генерация значения строки для Title
+     */
+    public static String generateRandomTitle() { // Генерация значения для Title
+        return faker.name().name();
     }
-    public static  int generateRandomAdditionalNumbers(){ //Генерация значения для AdditionalNumbers
-        return faker.number().numberBetween(0,999);
+    /**
+     * Генерация значения AdditionalNumbers
+     */
+    public static int generateRandomAdditionalNumbers() { //Генерация значения для AdditionalNumbers
+        return faker.number().numberBetween(0, 999);
     }
-    public static String generateRandomAdditionalInfo(){return faker.job().title();} //Генерация строки для AdditionalInfo
-
-    public static List<Integer> generateRandomImportantNumbers(){ //Генерация значений для ImportantNumbers
+    /**
+     * Генерация строки для AdditionalInfo
+     */
+    public static String generateRandomAdditionalInfo() {
+        return faker.job().title();
+    }
+    /**
+     * Функция генерации случайных значений ImportNumbers
+     */
+    public static List<Integer> generateRandomImportantNumbers() {
         List<Integer> list = new ArrayList<>();
-        for (int i =0;i<3;i++){
-            int randomNumber = faker.number().numberBetween(0,100);
+        for (int i = 0; i < 3; i++) {
+            int randomNumber = faker.number().numberBetween(0, 100);
             list.add(randomNumber);
         }
         return list;
     }
-    public static boolean generateRandomVerifiedStatus(){ //Генерация значения True/False
+    /**
+     * Генерация значения True/False для VerifiedStatus
+     */
+    public static boolean generateRandomVerifiedStatus() {
         return faker.bool().bool();
     }
 }

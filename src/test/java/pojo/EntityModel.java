@@ -8,12 +8,12 @@ import lombok.EqualsAndHashCode;
 import java.util.List;
 
 /**
- * pojo класс с JSON моделью пользователя
+ * pojo класс с JSON моделью сущности
  */
 @Data
 @Builder
 @EqualsAndHashCode(exclude = {"id"})
-public class UserModel {
+public class EntityModel {
     private final Addition addition;
 
     @Data

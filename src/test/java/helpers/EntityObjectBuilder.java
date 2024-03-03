@@ -1,21 +1,21 @@
 package helpers;
 
-import pojo.UserModel;
+import pojo.EntityModel;
 
 import java.util.List;
 
 /**
  * Метод для формирования тела запроса
  */
-public class UserObjectBuilder {
-    public static UserModel getAddNewUserModel() {
-        return UserModel.builder()
-                .addition(UserModel.Addition.builder()
+public class EntityObjectBuilder {
+    public static EntityModel addNewEntityModel() {
+        return EntityModel.builder()
+                .addition(EntityModel.Addition.builder()
                         .additionalInfo(GenerateRandomData.generateRandomAdditionalInfo())
                         .additionalNumber(GenerateRandomData.generateRandomAdditionalNumbers())
                         .build())
                 .importantNumbers(List.of(GenerateRandomData.generateRandomImportantNumbers().toArray(new Integer[0])))
-                .title(GenerateRandomData.generateRandomName())
+                .title(GenerateRandomData.generateRandomTitle())
                 .verified(GenerateRandomData.generateRandomVerifiedStatus())
                 .build();
     }
