@@ -7,7 +7,7 @@ import io.qameta.allure.Story;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import pojo.UserModel;
+import pojo.entityModel;
 
 import static helpers.UserObjectBuilder.getAddNewUserModel;
 
@@ -20,7 +20,7 @@ public class AddNewUser extends BaseTest {
     @Story("Создание нового пользователя")
     @Feature("Создание нового пользователя")
     public void addNewUser() {
-        UserModel request = getAddNewUserModel();
+        entityModel request = getAddNewUserModel();
         ResponseWrapper createNewUser = steps.CreateUser(request);
         //Блок проверок на статус код
         softAssert.assertEquals(createNewUser.getStatusCode(), 200);

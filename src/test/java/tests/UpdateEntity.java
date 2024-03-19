@@ -5,7 +5,7 @@ import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import pojo.UserModel;
+import pojo.entityModel;
 
 import static helpers.UserObjectBuilder.getAddNewUserModel;
 
@@ -15,8 +15,8 @@ public class UpdateUser extends BaseTest {
     @Feature("Обновление информации о пользователе по ID")
     public void updateUser() {
         SoftAssert softAssert = new SoftAssert();
-        UserModel request = getAddNewUserModel();
-        UserModel update = getAddNewUserModel();
+        entityModel request = getAddNewUserModel();
+        entityModel update = getAddNewUserModel();
         ResponseWrapper createNewUser = steps.CreateUser(request);
         String id = createNewUser.getIdCreatedUser();
         ResponseWrapper updateCustomer = steps.updateUser(update, id);

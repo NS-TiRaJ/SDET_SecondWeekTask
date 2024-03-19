@@ -1,6 +1,6 @@
 package helpers;
 
-import pojo.UserModel;
+import pojo.entityModel;
 
 import java.util.List;
 
@@ -8,9 +8,9 @@ import java.util.List;
  * Метод для формирования тела запроса
  */
 public class UserObjectBuilder {
-    public static UserModel getAddNewUserModel() {
-        return UserModel.builder()
-                .addition(UserModel.Addition.builder()
+    public static entityModel getAddNewUserModel() {
+        return entityModel.builder()
+                .addition(entityModel.Addition.builder()
                         .additionalInfo(GenerateRandomData.generateRandomAdditionalInfo())
                         .additionalNumber(GenerateRandomData.generateRandomAdditionalNumbers())
                         .build())

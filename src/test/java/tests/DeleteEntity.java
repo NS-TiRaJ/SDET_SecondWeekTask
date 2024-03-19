@@ -5,7 +5,7 @@ import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import pojo.UserModel;
+import pojo.entityModel;
 
 import static helpers.UserObjectBuilder.getAddNewUserModel;
 
@@ -15,7 +15,7 @@ public class DeleteUser extends BaseTest {
     @Feature("Удаление пользователя по ID")
     public void deleteUser() {
         SoftAssert softAssert = new SoftAssert();
-        UserModel request = getAddNewUserModel();
+        entityModel request = getAddNewUserModel();
         ResponseWrapper createNewUser = steps.CreateUser(request);
         String id = createNewUser.getIdCreatedUser();
         ResponseWrapper deleteUser = steps.deleteUserById(id);
